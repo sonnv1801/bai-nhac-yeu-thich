@@ -117,8 +117,10 @@ const Video = () => {
           onProgress={handleProgress}
           progressInterval={1000} // Cập nhật progress mỗi giây
           playedSeconds={playedSeconds} // Set thời gian đã phát của video
-          width={youtubeWidth}
-          height={youtubeHeight}
+          style={{
+            width: "var(--youtube-width)",
+            height: "var(--youtube-height)",
+          }}
         />
         <h1>{videos[currentVideoIndex].name}</h1>
       </div>

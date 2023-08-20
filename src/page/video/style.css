@@ -1,5 +1,8 @@
 /* Video.css */
-
+:root {
+  --youtube-width: 900px;
+  --youtube-height: 500px;
+}
 .video-player {
   display: flex;
   justify-content: space-between;
@@ -82,8 +85,16 @@
 }
 
 @media (max-width: 600px) {
-  .video-container {
+  :root {
+    --youtube-width: 350px;
+    --youtube-height: 500px;
+  }
+  .video-player {
     display: block;
+    padding: 1rem;
+  }
+  .playlist {
+    padding: 0;
   }
 
   /* Adjust video height to maintain aspect ratio */
