@@ -1,8 +1,5 @@
 /* Video.css */
-:root {
-  --youtube-width: 900px;
-  --youtube-height: 500px;
-}
+
 .video-player {
   display: flex;
   justify-content: space-between;
@@ -84,11 +81,23 @@
   background-color: #0056b3;
 }
 
+#desktop {
+  display: flex;
+}
+
+#mobile {
+  display: none;
+}
+
 @media (max-width: 600px) {
-  :root {
-    --youtube-width: 350px;
-    --youtube-height: 500px;
+  #desktop {
+    display: none;
   }
+
+  #mobile {
+    display: block;
+  }
+
   .video-player {
     display: block;
     padding: 1rem;

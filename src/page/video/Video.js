@@ -74,10 +74,10 @@ const Video = () => {
       setIsPlaying(false);
     }
   }, [isVideoPlaying]);
-  const screenWidth = window.innerWidth;
-  const youtubeWidth = screenWidth > 600 ? 900 : 450; // Adjust as needed
+  const youtubeWidth = 900; // Adjust as needed
   const youtubeHeight = 500;
-
+  const youtubeWidthmb = 350; // Adjust as needed
+  const youtubeHeightmb = 500;
   // Lưu trạng thái vào localStorage khi thay đổi
   useEffect(() => {
     localStorage.setItem(
@@ -104,55 +104,102 @@ const Video = () => {
   }, []);
 
   return (
-    <div className="video-player">
-      <div className="video-container">
-        <ReactPlayer
-          ref={videoRef}
-          url={videos[currentVideoIndex].url}
-          playing={isPlaying}
-          controls
-          onEnded={handleVideoEnded}
-          onPlay={handleVideoPlay}
-          onPause={handleVideoPause}
-          onProgress={handleProgress}
-          progressInterval={1000} // Cập nhật progress mỗi giây
-          playedSeconds={playedSeconds} // Set thời gian đã phát của video
-          style={{
-            width: "var(--youtube-width)",
-            height: "var(--youtube-height)",
-          }}
-        />
-        <h1>{videos[currentVideoIndex].name}</h1>
+    <>
+      <div className="video-player" id="desktop">
+        <div className="video-container">
+          <ReactPlayer
+            ref={videoRef}
+            url={videos[currentVideoIndex].url}
+            playing={isPlaying}
+            controls
+            onEnded={handleVideoEnded}
+            onPlay={handleVideoPlay}
+            onPause={handleVideoPause}
+            onProgress={handleProgress}
+            progressInterval={1000} // Cập nhật progress mỗi giây
+            playedSeconds={playedSeconds} // Set thời gian đã phát của video
+            width={youtubeWidth}
+            height={youtubeHeight}
+          />
+          <h1>{videos[currentVideoIndex].name}</h1>
+        </div>
+        <div className="playlist">
+          <ul>
+            {videos.map((video, index) => (
+              <li
+                key={index}
+                className={index === currentVideoIndex ? "active" : ""}
+                onClick={() => handleVideoSelect(index)}
+              >
+                <div className="video-info">
+                  <img src={video.thumbnail} alt={`Video ${index + 1}`} />
+                  <span>{video.name}</span>
+                </div>
+                {index === currentVideoIndex && isPlaying && (
+                  <motion.div
+                    className="music-wave"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <BsFillVolumeUpFill size={24} color="blueviolet" />
+                  </motion.div>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <div className="playlist">
-        <ul>
-          {videos.map((video, index) => (
-            <li
-              key={index}
-              className={index === currentVideoIndex ? "active" : ""}
-              onClick={() => handleVideoSelect(index)}
-            >
-              <div className="video-info">
-                <img src={video.thumbnail} alt={`Video ${index + 1}`} />
-                <span>{video.name}</span>
-              </div>
-              {index === currentVideoIndex && isPlaying && (
-                <motion.div
-                  className="music-wave"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <BsFillVolumeUpFill size={24} color="blueviolet" />
-                </motion.div>
-              )}
-            </li>
-          ))}
-        </ul>
+      <div className="video-player" id="mobile">
+        <div className="video-container">
+          <ReactPlayer
+            ref={videoRef}
+            url={videos[currentVideoIndex].url}
+            playing={isPlaying}
+            controls
+            onEnded={handleVideoEnded}
+            onPlay={handleVideoPlay}
+            onPause={handleVideoPause}
+            onProgress={handleProgress}
+            progressInterval={1000} // Cập nhật progress mỗi giây
+            playedSeconds={playedSeconds} // Set thời gian đã phát của video
+            width={youtubeWidthmb}
+            height={youtubeHeightmb}
+          />
+          <h1>{videos[currentVideoIndex].name}</h1>
+        </div>
+        <div className="playlist">
+          <ul>
+            {videos.map((video, index) => (
+              <li
+                key={index}
+                className={index === currentVideoIndex ? "active" : ""}
+                onClick={() => handleVideoSelect(index)}
+              >
+                <div className="video-info">
+                  <img src={video.thumbnail} alt={`Video ${index + 1}`} />
+                  <span>{video.name}</span>
+                </div>
+                {index === currentVideoIndex && isPlaying && (
+                  <motion.div
+                    className="music-wave"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <BsFillVolumeUpFill size={24} color="blueviolet" />
+                  </motion.div>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
