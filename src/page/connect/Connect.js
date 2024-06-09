@@ -9,12 +9,12 @@ const Connect = () => {
   useEffect(() => {
     const handleOnline = () => {
       setIsOnline(true);
-      toast("Quay lại trực tuyến", { type: "success" }); // Hiển thị toast khi kết nối lại
+      toast("Quay lại trực tuyến", { type: "success" });
     };
 
     const handleOffline = () => {
       setIsOnline(false);
-      toast("Không có mạng. Kiểm tra lại kết nối!", { type: "error" }); // Hiển thị toast khi mất kết nối
+      toast("Không có mạng. Kiểm tra lại kết nối!", { type: "error" });
     };
 
     window.addEventListener("online", handleOnline);
