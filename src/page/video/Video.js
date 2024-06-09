@@ -8,60 +8,89 @@ const Video = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isVideoPlaying, setIsVideoPlaying] = useState(true);
-  const [playedSeconds, setPlayedSeconds] = useState(0); // Thời gian đã phát của video
+  const [playedSeconds, setPlayedSeconds] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
+  const [isBlurred, setIsBlurred] = useState(true);
 
-  const videos = [
+  const audios = [
     {
-      name: "JACK - J97 | XÓA TÊN ANH ĐI | Official Music Video | [Album26]",
+      name: "list Son Tung M-TP",
+      url: "https://youtu.be/h6VAQUws040?si=JfImfv0MIL2QrO3q",
+    },
+    {
+      name: "ĐỪNG LÀM TRÁI TIM ANH ĐAU",
+      url: "https://youtu.be/abPmZCZZrFA?si=oFxwcNl8SJmsHqrV",
+    },
+    {
+      name: "list RONBOOGZ ",
+      url: "https://youtu.be/jK9OJyRPeZw?si=bpKacSg8BPnr8BCU",
+    },
+    {
+      name: "Không Thể Say",
+      url: "https://youtu.be/i0nd3NPJ4MI?si=CcRZce55f_Pk5TZe",
+    },
+    {
+      name: "Những Bản Nhạc Lofi ",
+      url: "https://youtu.be/4BpxRJUQaYg?si=yhjD_gjnUKzG9d1l",
+    },
+    {
+      name: "XÓA TÊN ANH ĐI",
       url: "https://youtu.be/mA-UxOle3YQ",
-      thumbnail: "https://i.ytimg.com/vi/mA-UxOle3YQ/maxresdefault.jpg",
     },
     {
-      name: "HẠ CÒN VƯƠNG NẮNG | DATKAA x KIDO x Prod. QT BEATZ [OFFICIAL MUSIC VIDEO]",
+      name: "HẠ CÒN VƯƠNG NẮNG",
       url: "https://youtu.be/2YllmPaKhkY",
-      thumbnail: "https://i.ytimg.com/vi/2YllmPaKhkY/maxresdefault.jpg",
     },
     {
-      name: "THU XA NGÚT NGÀN | DATKAA x Prod. QT BEATZ | OFFICIAL MUSIC VIDEO",
+      name: "THU XA NGÚT NGÀN",
       url: "https://youtu.be/uNZ3JFLhE2I",
-      thumbnail: "https://i.ytimg.com/vi/uNZ3JFLhE2I/maxresdefault.jpg",
     },
     {
-      name: "ANH TỆ | DATKAA x Prod. QT BEATZ | OFFICIAL MUSIC VIDEO",
+      name: "ANH TỆ",
       url: "https://youtu.be/jRVNXEayMLA",
-      thumbnail: "https://i.ytimg.com/vi/jRVNXEayMLA/maxresdefault.jpg",
     },
     {
-      name: "Huỳnh Công Hiếu - Sống cho hết đời thanh xuân | Sự đẹp đẽ của vẻ đẹp ngôn từ",
-      url: "https://youtu.be/mVKoJGMxHaA",
-      thumbnail: "https://i.ytimg.com/vi/mVKoJGMxHaA/maxresdefault.jpg",
+      name: "Sống cho hết đời thanh xuân",
+      url: "https://youtu.be/yyXHS2b-lCU?si=wYQ6M4J3ytC5MjDj",
     },
     {
-      name: "Khúc Ca Vàng - Mikelodic - Team Thái VG | Rap Việt 2023 [MV Lyrics]",
+      name: "Khúc Ca Vàng",
       url: "https://youtu.be/xTdg-SRZCQo",
-      thumbnail: "https://i.ytimg.com/vi/xTdg-SRZCQo/maxresdefault.jpg",
     },
-    // Thêm các đối tượng video khác vào danh sách
+    {
+      name: "ĐỪNG LÀM TRÁI TIM ANH ĐAU",
+      url: "https://youtu.be/abPmZCZZrFA?si=oFxwcNl8SJmsHqrV",
+    },
   ];
 
-  const videoRef = useRef(null);
+  const audioRef = useRef(null);
+  const nameAudioRef = useRef(null);
+  const playlistRef = useRef(null);
 
-  const handleVideoEnded = () => {
-    setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videos.length);
-    setPlayedSeconds(0); // Reset thời gian đã phát khi chuyển sang video mới
-  };
-
-  const handleVideoSelect = (index) => {
-    setCurrentVideoIndex(index);
+  const handleAudioEnded = () => {
+    setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % audios.length);
+    setPlayedSeconds(0);
     setIsPlaying(true);
-    setPlayedSeconds(0); // Reset thời gian đã phát khi chuyển sang video mới
   };
 
-  const handleVideoPlay = () => {
+  const handleAudioSelect = (index) => {
+    if (index === currentVideoIndex) {
+      setIsPlaying(!isPlaying);
+    } else {
+      setCurrentVideoIndex(index);
+      setIsPlaying(true);
+      setPlayedSeconds(0);
+    }
+    if (nameAudioRef.current) {
+      nameAudioRef.current.play();
+    }
+  };
+
+  const handleAudioPlay = () => {
     setIsVideoPlaying(true);
   };
 
-  const handleVideoPause = () => {
+  const handleAudioPause = () => {
     setIsVideoPlaying(false);
   };
 
@@ -74,11 +103,7 @@ const Video = () => {
       setIsPlaying(false);
     }
   }, [isVideoPlaying]);
-  const youtubeWidth = 900; // Adjust as needed
-  const youtubeHeight = 500;
-  const youtubeWidthmb = 350; // Adjust as needed
-  const youtubeHeightmb = 500;
-  // Lưu trạng thái vào localStorage khi thay đổi
+
   useEffect(() => {
     localStorage.setItem(
       "currentVideoIndex",
@@ -87,7 +112,6 @@ const Video = () => {
     localStorage.setItem("playedSeconds", JSON.stringify(playedSeconds));
   }, [currentVideoIndex, playedSeconds]);
 
-  // Lấy trạng thái từ localStorage khi tải lại trang
   useEffect(() => {
     const savedCurrentVideoIndex = JSON.parse(
       localStorage.getItem("currentVideoIndex")
@@ -103,84 +127,78 @@ const Video = () => {
     }
   }, []);
 
+  const toggleVideo = () => {
+    setShowVideo(!showVideo);
+  };
+
+  const handleMouseEnter = () => {
+    setIsBlurred(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsBlurred(true);
+  };
+
+  const handleMouseMove = () => {
+    if (playlistRef.current) {
+      setIsBlurred(false);
+      clearTimeout(window.blurTimeout);
+      window.blurTimeout = setTimeout(() => {
+        setIsBlurred(true);
+      }, 2000);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
   return (
     <>
-      <div className="video-player" id="desktop">
-        <div className="video-container">
-          <ReactPlayer
-            ref={videoRef}
-            url={videos[currentVideoIndex].url}
-            playing={isPlaying}
-            controls
-            onEnded={handleVideoEnded}
-            onPlay={handleVideoPlay}
-            onPause={handleVideoPause}
-            onProgress={handleProgress}
-            progressInterval={1000} // Cập nhật progress mỗi giây
-            playedSeconds={playedSeconds} // Set thời gian đã phát của video
-            width={youtubeWidth}
-            height={youtubeHeight}
-          />
-          <h1>{videos[currentVideoIndex].name}</h1>
+      <div className="audio-player">
+        <div className="audio-container">
+          <div className={`responsive-player ${showVideo ? "" : "hidden"}`}>
+            <ReactPlayer
+              ref={audioRef}
+              url={audios[currentVideoIndex].url}
+              playing={isPlaying}
+              controls
+              onEnded={handleAudioEnded}
+              onPlay={handleAudioPlay}
+              onPause={handleAudioPause}
+              onProgress={handleProgress}
+              progressInterval={1000}
+              width="100%"
+              height="100%"
+            />
+          </div>
+          <button className="toggle-video-btn" onDoubleClick={toggleVideo}>
+            {showVideo ? "Disposion" : "Feedback Type"}
+          </button>
         </div>
-        <div className="playlist">
+        <div
+          className={`playlist ${isBlurred ? "blurred" : ""}`}
+          ref={playlistRef}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <ul>
-            {videos.map((video, index) => (
+            {audios.map((audio, index) => (
               <li
                 key={index}
                 className={index === currentVideoIndex ? "active" : ""}
-                onClick={() => handleVideoSelect(index)}
+                onClick={() => handleAudioSelect(index)}
               >
-                <div className="video-info">
-                  <img src={video.thumbnail} alt={`Video ${index + 1}`} />
-                  <span>{video.name}</span>
-                </div>
-                {index === currentVideoIndex && isPlaying && (
-                  <motion.div
-                    className="music-wave"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <BsFillVolumeUpFill size={24} color="blueviolet" />
-                  </motion.div>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <div className="video-player" id="mobile">
-        <div className="video-container">
-          <ReactPlayer
-            ref={videoRef}
-            url={videos[currentVideoIndex].url}
-            playing={isPlaying}
-            controls
-            onEnded={handleVideoEnded}
-            onPlay={handleVideoPlay}
-            onPause={handleVideoPause}
-            onProgress={handleProgress}
-            progressInterval={1000} // Cập nhật progress mỗi giây
-            playedSeconds={playedSeconds} // Set thời gian đã phát của video
-            width={youtubeWidthmb}
-            height={youtubeHeightmb}
-          />
-          <h1>{videos[currentVideoIndex].name}</h1>
-        </div>
-        <div className="playlist">
-          <ul>
-            {videos.map((video, index) => (
-              <li
-                key={index}
-                className={index === currentVideoIndex ? "active" : ""}
-                onClick={() => handleVideoSelect(index)}
-              >
-                <div className="video-info">
-                  <img src={video.thumbnail} alt={`Video ${index + 1}`} />
-                  <span>{video.name}</span>
+                <div className="audio-info">
+                  <span>{audio.name}</span>
+                  <audio
+                    ref={index === currentVideoIndex ? nameAudioRef : null}
+                    src={audio.nameAudio}
+                  />
                 </div>
                 {index === currentVideoIndex && isPlaying && (
                   <motion.div
@@ -204,3 +222,220 @@ const Video = () => {
 };
 
 export default Video;
+
+// import React, { useState, useRef, useEffect } from "react";
+// import ReactPlayer from "react-player";
+// import { BsFillVolumeUpFill } from "react-icons/bs";
+// import { motion } from "framer-motion";
+// import "./style.css";
+
+// const Video = () => {
+//   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+//   const [isPlaying, setIsPlaying] = useState(true);
+//   const [isVideoPlaying, setIsVideoPlaying] = useState(true);
+//   const [playedSeconds, setPlayedSeconds] = useState(0);
+//   const [showVideo, setShowVideo] = useState(false);
+//   const [isBlurred, setIsBlurred] = useState(true); // Start with blurred state
+//   const [showPlaylist, setShowPlaylist] = useState(true); // State to control playlist visibility
+
+//   const audios = [
+//     {
+//       name: "XÓA TÊN ANH ĐI",
+//       url: "https://youtu.be/mA-UxOle3YQ",
+//     },
+//     {
+//       name: "HẠ CÒN VƯƠNG NẮNG",
+//       url: "https://youtu.be/2YllmPaKhkY",
+//     },
+//     {
+//       name: "THU XA NGÚT NGÀN",
+//       url: "https://youtu.be/uNZ3JFLhE2I",
+//     },
+//     {
+//       name: "ANH TỆ",
+//       url: "https://youtu.be/jRVNXEayMLA",
+//     },
+//     {
+//       name: "Sống cho hết đời thanh xuân",
+//       url: "https://youtu.be/yyXHS2b-lCU?si=wYQ6M4J3ytC5MjDj",
+//     },
+//     {
+//       name: "Khúc Ca Vàng",
+//       url: "https://youtu.be/xTdg-SRZCQo",
+//     },
+//     {
+//       name: "ĐỪNG LÀM TRÁI TIM ANH ĐAU",
+//       url: "https://youtu.be/abPmZCZZrFA?si=oFxwcNl8SJmsHqrV",
+//     },
+//   ];
+
+//   const audioRef = useRef(null);
+//   const nameAudioRef = useRef(null);
+//   const playlistRef = useRef(null);
+
+//   const handleAudioEnded = () => {
+//     setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % audios.length);
+//     setPlayedSeconds(0);
+//     setIsPlaying(true);
+//   };
+
+//   const handleAudioSelect = (index) => {
+//     if (index === currentVideoIndex) {
+//       setIsPlaying(!isPlaying);
+//     } else {
+//       setCurrentVideoIndex(index);
+//       setIsPlaying(true);
+//       setPlayedSeconds(0);
+//     }
+//     if (nameAudioRef.current) {
+//       nameAudioRef.current.play();
+//     }
+//   };
+
+//   const handleAudioPlay = () => {
+//     setIsVideoPlaying(true);
+//   };
+
+//   const handleAudioPause = () => {
+//     setIsVideoPlaying(false);
+//   };
+
+//   const handleProgress = (progress) => {
+//     setPlayedSeconds(progress.playedSeconds);
+//   };
+
+//   useEffect(() => {
+//     if (!isVideoPlaying) {
+//       setIsPlaying(false);
+//     }
+//   }, [isVideoPlaying]);
+
+//   useEffect(() => {
+//     localStorage.setItem(
+//       "currentVideoIndex",
+//       JSON.stringify(currentVideoIndex)
+//     );
+//     localStorage.setItem("playedSeconds", JSON.stringify(playedSeconds));
+//   }, [currentVideoIndex, playedSeconds]);
+
+//   useEffect(() => {
+//     const savedCurrentVideoIndex = JSON.parse(
+//       localStorage.getItem("currentVideoIndex")
+//     );
+//     const savedPlayedSeconds = JSON.parse(
+//       localStorage.getItem("playedSeconds")
+//     );
+//     if (savedCurrentVideoIndex !== null) {
+//       setCurrentVideoIndex(savedCurrentVideoIndex);
+//     }
+//     if (savedPlayedSeconds !== null) {
+//       setPlayedSeconds(savedPlayedSeconds);
+//     }
+//   }, []);
+
+//   const toggleVideo = () => {
+//     setShowVideo(!showVideo);
+//   };
+
+//   const togglePlaylist = () => {
+//     setShowPlaylist(!showPlaylist);
+//   };
+
+//   const handleMouseEnter = () => {
+//     setIsBlurred(false);
+//   };
+
+//   const handleMouseLeave = () => {
+//     setIsBlurred(true);
+//   };
+
+//   const handleMouseMove = () => {
+//     if (playlistRef.current) {
+//       setIsBlurred(false);
+//       clearTimeout(window.blurTimeout);
+//       window.blurTimeout = setTimeout(() => {
+//         setIsBlurred(true);
+//       }, 2000);
+//     }
+//   };
+
+//   useEffect(() => {
+//     document.addEventListener("mousemove", handleMouseMove);
+
+//     return () => {
+//       document.removeEventListener("mousemove", handleMouseMove);
+//     };
+//   }, []);
+
+//   return (
+//     <>
+//       <div className="audio-player">
+//         <div className="audio-container">
+//           <div className={`responsive-player ${showVideo ? "" : "hidden"}`}>
+//             <ReactPlayer
+//               ref={audioRef}
+//               url={audios[currentVideoIndex].url}
+//               playing={isPlaying}
+//               controls
+//               onEnded={handleAudioEnded}
+//               onPlay={handleAudioPlay}
+//               onPause={handleAudioPause}
+//               onProgress={handleProgress}
+//               progressInterval={1000}
+//               width="100%"
+//               height="100%"
+//             />
+//           </div>
+//           <button className="toggle-video-btn" onDoubleClick={toggleVideo}>
+//             {showVideo ? "Cơm" : "Áo"}
+//           </button>
+//         </div>
+//         {/* Toggle playlist visibility */}
+//         <button className="toggle-playlist-btn" onClick={togglePlaylist}>
+//           {showPlaylist ? "Gạo" : "Tiền"}
+//         </button>
+//         {/* Conditionally render the playlist */}
+//         {showPlaylist && (
+//           <div
+//             className={`playlist ${isBlurred ? "blurred" : ""}`}
+//             ref={playlistRef}
+//             onMouseEnter={handleMouseEnter}
+//             onMouseLeave={handleMouseLeave}
+//           >
+//             <ul>
+//               {audios.map((audio, index) => (
+//                 <li
+//                   key={index}
+//                   className={index === currentVideoIndex ? "active" : ""}
+//                   onClick={() => handleAudioSelect(index)}
+//                 >
+//                   <div className="audio-info">
+//                     <span>{audio.name}</span>
+//                     <audio
+//                       ref={index === currentVideoIndex ? nameAudioRef : null}
+//                       src={audio.url}
+//                     />
+//                   </div>
+//                   {index === currentVideoIndex && isPlaying && (
+//                     <motion.div
+//                       className="music-wave"
+//                       initial={{ opacity: 0, y: 10 }}
+//                       animate={{ opacity: 1, y: 0 }}
+//                       exit={{ opacity: 0, y: -10 }}
+//                       whileHover={{ scale: 1.1 }}
+//                       whileTap={{ scale: 0.9 }}
+//                     >
+//                       <BsFillVolumeUpFill size={24} color="blueviolet" />
+//                     </motion.div>
+//                   )}
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+//         )}
+//       </div>
+//     </>
+//   );
+// };
+
+// export default Video;
