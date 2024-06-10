@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import ReactPlayer from "react-player";
 import { BsFillVolumeUpFill } from "react-icons/bs";
 import { motion } from "framer-motion";
-import axios from "axios";
+import { audios } from "./audioFiles"; // Adjust the path if needed
 import "./style.css";
 
 const Video = () => {
@@ -12,26 +12,10 @@ const Video = () => {
   const [playedSeconds, setPlayedSeconds] = useState(0);
   const [showVideo, setShowVideo] = useState(false);
   const [isBlurred, setIsBlurred] = useState(true);
-  const [audios, setAudios] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
 
   const audioRef = useRef(null);
   const nameAudioRef = useRef(null);
   const playlistRef = useRef(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("https://btpv.onrender.com/v1/relax");
-        setAudios(response.data);
-        setIsLoading(false);
-      } catch (error) {
-        console.error("Error fetching data: ", error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   const handleAudioEnded = () => {
     setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % audios.length);
@@ -40,12 +24,15 @@ const Video = () => {
   };
 
   const handleAudioSelect = (index) => {
-    if (index === currentVideoIndex) {
-      setIsPlaying(!isPlaying);
-    } else {
+    if (index !== currentVideoIndex) {
       setCurrentVideoIndex(index);
       setIsPlaying(true);
       setPlayedSeconds(0);
+      if (audioRef.current) {
+        audioRef.current.seekTo(0, "seconds");
+      }
+    } else {
+      setIsPlaying(!isPlaying);
     }
     if (nameAudioRef.current) {
       nameAudioRef.current.play();
@@ -125,67 +112,62 @@ const Video = () => {
 
   return (
     <>
-      {isLoading && <div>Loading...</div>}
-      {!isLoading && (
-        <div className="audio-player">
-          <div className="audio-container">
-            <div className={`responsive-player ${showVideo ? "" : "hidden"}`}>
-              <ReactPlayer
-                ref={audioRef}
-                url={audios[currentVideoIndex]?.url}
-                playing={isPlaying}
-                controls
-                onEnded={handleAudioEnded}
-                onPlay={handleAudioPlay}
-                onPause={handleAudioPause}
-                onProgress={handleProgress}
-                progressInterval={1000}
-                width="100%"
-                height="100%"
-              />
-            </div>
-            <button className="toggle-video-btn" onDoubleClick={toggleVideo}>
-              {showVideo ? "Disposion" : "Feedback Type"}
-            </button>
-          </div>
+      <div className="audio-player">
+        <div className="audio-container">
           <div
-            className={`playlist ${isBlurred ? "blurred" : ""}`}
-            ref={playlistRef}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            className={`responsive-player ${showVideo ? "visible" : "hidden"}`}
           >
-            <ul>
-              {audios.map((audio, index) => (
-                <li
-                  key={index}
-                  className={index === currentVideoIndex ? "active" : ""}
-                  onClick={() => handleAudioSelect(index)}
-                >
-                  <div className="audio-info">
-                    <span>{audio.name}</span>
-                    <audio
-                      ref={index === currentVideoIndex ? nameAudioRef : null}
-                      src={audio.url}
-                    />
-                  </div>
-                  {index === currentVideoIndex && isPlaying && (
-                    <motion.div
-                      className="music-wave"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <BsFillVolumeUpFill size={24} color="blueviolet" />
-                    </motion.div>
-                  )}
-                </li>
-              ))}
-            </ul>
+            <ReactPlayer
+              ref={audioRef}
+              url={audios[currentVideoIndex]?.url}
+              playing={isPlaying}
+              controls
+              onEnded={handleAudioEnded}
+              onPlay={handleAudioPlay}
+              onPause={handleAudioPause}
+              onProgress={handleProgress}
+              progressInterval={1000}
+              width="100%"
+              height="100%"
+            />
           </div>
+          <button className="toggle-video-btn" onDoubleClick={toggleVideo}>
+            {showVideo ? "Disposion" : "Feedback Type"}
+          </button>
         </div>
-      )}
+        <div
+          className={`playlist ${isBlurred ? "blurred" : ""}`}
+          ref={playlistRef}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <ul>
+            {audios.map((audio, index) => (
+              <li
+                key={index}
+                className={index === currentVideoIndex ? "active" : ""}
+                onClick={() => handleAudioSelect(index)}
+              >
+                <div className="audio-info">
+                  <span>{audio.name}</span>
+                </div>
+                {index === currentVideoIndex && isPlaying && (
+                  <motion.div
+                    className="music-wave"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <BsFillVolumeUpFill size={24} color="blueviolet" />
+                  </motion.div>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </>
   );
 };
