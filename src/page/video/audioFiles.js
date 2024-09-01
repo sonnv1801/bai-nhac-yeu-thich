@@ -10,8 +10,63 @@ import HaConVuongNang from "./videos/HaConVuongNang.mp3";
 import KhongTheSay from "./videos/KhongTheSay.mp3";
 import DungLamTraiTimAnhDau from "./videos/DungLamTraiTimAnhDau.mp3";
 import MotNgayBuon from "./videos/MotNgayBuon.mp3";
+import EmBietKhong from "./videos/EmBietKhong.mp3";
+import ThayToiYeuCoAy from "./videos/ThayToiYeuCoAy.mp3";
+import KimPhutKimGio from "./videos/KimPhutKimGio.mp3";
+import DeuLaCuaEm from "./videos/DeuLaCuaEm.mp3";
+import ChiecO3Nguoi from "./videos/ChiecO3Nguoi.mp3";
+import Lang from "./videos/Lang.mp3";
+import GapLaiTa60 from "./videos/GapLaiTa60.mp3";
+import VuaDiVuaKhoc from "./videos/VuaDiVuaKhoc.mp3";
+import ToiChoEm from "./videos/ToiChoEm.mp3";
+import NguoiNhuAnh from "./videos/NguoiNhuAnh.mp3";
+import LoiTuBietChuaNoi from "./videos/LoiTungBietChuaNoi.mp3";
 
 export const audios = [
+  {
+    name: "Em Biết Không - Phan Duy Anh",
+    url: EmBietKhong,
+  },
+  {
+    name: "Thay Tôi Yêu Cô Ấy",
+    url: ThayToiYeuCoAy,
+  },
+  {
+    name: "Kim Phút Kim Giờ",
+    url: KimPhutKimGio,
+  },
+  {
+    name: "Đều Là Của Em",
+    url: DeuLaCuaEm,
+  },
+  {
+    name: "Chiếc Ô 3 Người",
+    url: ChiecO3Nguoi,
+  },
+  {
+    name: "Lãng",
+    url: Lang,
+  },
+  {
+    name: "Gặp lại năm ta 60",
+    url: GapLaiTa60,
+  },
+  {
+    name: "Vừa đi vừa Khóc",
+    url: VuaDiVuaKhoc,
+  },
+  {
+    name: "Tội Cho Em (LVD)",
+    url: ToiChoEm,
+  },
+  {
+    name: "Người Như Anh",
+    url: NguoiNhuAnh,
+  },
+  {
+    name: "Lời Từ Biệt Chưa Nói",
+    url: LoiTuBietChuaNoi,
+  },
   {
     name: "Exit Sign - HTH",
     url: ExitSignHTH,
