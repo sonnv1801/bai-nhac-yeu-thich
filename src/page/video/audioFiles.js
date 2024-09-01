@@ -21,6 +21,7 @@ import VuaDiVuaKhoc from "./videos/VuaDiVuaKhoc.mp3";
 import ToiChoEm from "./videos/ToiChoEm.mp3";
 import NguoiNhuAnh from "./videos/NguoiNhuAnh.mp3";
 import LoiTuBietChuaNoi from "./videos/LoiTungBietChuaNoi.mp3";
+import DoReMon1 from "./videos/DoReMon1.mp4";
 
 export const audios = [
   {
@@ -110,5 +111,9 @@ export const audios = [
   {
     name: "MỘT NGÀY BUỒN",
     url: MotNgayBuon,
+  },
+  {
+    name: "Đô Rê Mon Nè ",
+    url: DoReMon1,
   },
 ];
