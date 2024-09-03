@@ -41,10 +41,7 @@ export const audios = [
     name: "Em Biết Không - Phan Duy Anh",
     url: WeanShh,
   },
-  {
-    name: "Shhhhhhh... (W)",
-    url: EmBietKhong,
-  },
+
   {
     name: "Thay Tôi Yêu Cô Ấy",
     url: ThayToiYeuCoAy,
@@ -100,6 +97,10 @@ export const audios = [
   {
     name: "Lối Đi Cho Nhau",
     url: LoiDiChoNhau,
+  },
+  {
+    name: "Shhhhhhh... (W)",
+    url: EmBietKhong,
   },
   {
     name: "Lan Man",
