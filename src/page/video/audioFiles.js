@@ -30,7 +30,6 @@ import You from "./videos/You.mp3";
 import CoSaoCungDanh from "./videos/CoSaoCungDanh.mp3";
 import BuonHayVui from "./videos/BuonHayVui.mp3";
 import SayDamTrongLanDau from "./videos/SayDamTrongLanDau.mp3";
-import KhongMuonYeu from "./videos/KhongMuonYeu.mp3";
 import ConTimKhongDoiThay from "./videos/ConTimKhongDoiThay.mp3";
 import SoRangEmBietAnhConYeuEm from "./videos/SoRangEmBietAnhConYeuEm.mp3";
 import ChiBangCaiGatDau from "./videos/ChiBangCaiGatDau.mp3";
@@ -116,10 +115,6 @@ export const audios = [
   {
     name: "Say Đắm Trong Lần Đầu",
     url: SayDamTrongLanDau,
-  },
-  {
-    name: "Không Muốn Yêu Lại Càng Say Đắm",
-    url: KhongMuonYeu,
   },
   {
     name: "Con Tim Không Thay Đổi",
