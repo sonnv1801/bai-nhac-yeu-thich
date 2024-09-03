@@ -25,7 +25,7 @@ import HenEmOLanYeuThu2 from "./videos/HenEmOLanYeuThu2.mp3";
 import CoAiHenHoCungEmChua from "./videos/CoAiHenHoCungEmChua.mp3";
 import TinhTaHaiNga from "./videos/TinhTaHaiNga.mp3";
 import LoiDiChoNhau from "./videos/LoiDiChoNhau.mp3";
-import Shh from "./videos/Shh.mp3";
+import ShhYou from "./videos/ShhYou.mp3";
 import LanMan from "./videos/LanMan.mp3";
 import You from "./videos/You.mp3";
 import CoSaoCungDanh from "./videos/CoSaoCungDanh.mp3";
@@ -100,7 +100,7 @@ export const audios = [
   },
   {
     name: "Shhhhhh... (Wean)",
-    url: Shh,
+    url: ShhYou,
   },
   {
     name: "Lan Man",
