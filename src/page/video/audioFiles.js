@@ -34,10 +34,15 @@ import ConTimKhongDoiThay from "./videos/ConTimKhongDoiThay.mp3";
 import SoRangEmBietAnhConYeuEm from "./videos/SoRangEmBietAnhConYeuEm.mp3";
 import ChiBangCaiGatDau from "./videos/ChiBangCaiGatDau.mp3";
 import KhiNguoiMinhYeuKhoc from "./videos/KhiNguoiMinhYeuKhoc.mp3";
+import WeanShh from "./videos/WeanShh.mp3";
 
 export const audios = [
   {
     name: "Em Biết Không - Phan Duy Anh",
+    url: WeanShh,
+  },
+  {
+    name: "Shhhhhhh... (W)",
     url: EmBietKhong,
   },
   {
