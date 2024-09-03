@@ -38,6 +38,9 @@ import WeanShh from "./videos/WeanShh.mp3";
 
 export const audios = [
   {
+    name: "List Nhạc Của Cậu Nè",
+  },
+  {
     name: "Em Biết Không - Phan Duy Anh",
     url: WeanShh,
   },
@@ -136,6 +139,9 @@ export const audios = [
   {
     name: "Chỉ Bằng Một Cái Gật Đầu",
     url: ChiBangCaiGatDau,
+  },
+  {
+    name: "List Nhạc Của Ai Đó :))",
   },
   {
     name: "Exit Sign - HTH",
