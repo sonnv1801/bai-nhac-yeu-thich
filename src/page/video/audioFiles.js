@@ -21,7 +21,21 @@ import VuaDiVuaKhoc from "./videos/VuaDiVuaKhoc.mp3";
 import ToiChoEm from "./videos/ToiChoEm.mp3";
 import NguoiNhuAnh from "./videos/NguoiNhuAnh.mp3";
 import LoiTuBietChuaNoi from "./videos/LoiTungBietChuaNoi.mp3";
-import DoReMon1 from "./videos/DoReMon1.mp4";
+import HenEmOLanYeuThu2 from "./videos/HenEmOLanYeuThu2.mp3";
+import CoAiHenHoCungEmChua from "./videos/CoAiHenHoCungEmChua.mp3";
+import TinhTaHaiNga from "./videos/TinhTaHaiNga.mp3";
+import LoiDiChoNhau from "./videos/LoiDiChoNhau.mp3";
+import Shh from "./videos/Shh.mp3";
+import LanMan from "./videos/LanMan.mp3";
+import You from "./videos/You.mp3";
+import CoSaoCungDanh from "./videos/CoSaoCungDanh.mp3";
+import BuonHayVui from "./videos/BuonHayVui.mp3";
+import SayDamTrongLanDau from "./videos/SayDamTrongLanDau.mp3";
+import KhongMuonYeu from "./videos/KhongMuonYeu.mp3";
+import ConTimKhongDoiThay from "./videos/ConTimKhongDoiThay.mp3";
+import SoRangEmBietAnhConYeuEm from "./videos/SoRangEmBietAnhConYeuEm.mp3";
+import ChiBangCaiGatDau from "./videos/ChiBangCaiGatDau.mp3";
+import KhiNguoiMinhYeuKhoc from "./videos/KhiNguoiMinhYeuKhoc.mp3";
 
 export const audios = [
   {
@@ -69,6 +83,66 @@ export const audios = [
     url: LoiTuBietChuaNoi,
   },
   {
+    name: "Hẹn Em Ở Lần Yêu Thứ 2",
+    url: HenEmOLanYeuThu2,
+  },
+  {
+    name: "Có Ai Hẹn Hò Cùng Em Chưa",
+    url: CoAiHenHoCungEmChua,
+  },
+  {
+    name: "Tình Ta Hai Ngã",
+    url: TinhTaHaiNga,
+  },
+  {
+    name: "Lối Đi Cho Nhau",
+    url: LoiDiChoNhau,
+  },
+  {
+    name: "Shhhhhh... (Wean)",
+    url: Shh,
+  },
+  {
+    name: "Lan Man",
+    url: LanMan,
+  },
+  {
+    name: "You (Song Luân)",
+    url: You,
+  },
+  {
+    name: "Có Sao Cũng Đành",
+    url: CoSaoCungDanh,
+  },
+  {
+    name: "Buồn Hay Vui",
+    url: BuonHayVui,
+  },
+  {
+    name: "Say Đắm Trong Lần Đầu",
+    url: SayDamTrongLanDau,
+  },
+  {
+    name: "Không Muốn Yêu Lại Càng Say Đắm",
+    url: KhongMuonYeu,
+  },
+  {
+    name: "Con Tim Không Thay Đổi",
+    url: ConTimKhongDoiThay,
+  },
+  {
+    name: "Sợ Rằng Em Biết Anh Còn Yêu Em",
+    url: SoRangEmBietAnhConYeuEm,
+  },
+  {
+    name: "Khi Người Mình Yêu Khóc",
+    url: KhiNguoiMinhYeuKhoc,
+  },
+  {
+    name: "Chỉ Bằng Một Cái Gật Đầu",
+    url: ChiBangCaiGatDau,
+  },
+  {
     name: "Exit Sign - HTH",
     url: ExitSignHTH,
   },
@@ -111,9 +185,5 @@ export const audios = [
   {
     name: "MỘT NGÀY BUỒN",
     url: MotNgayBuon,
-  },
-  {
-    name: "Đô Rê Mon Nè ",
-    url: DoReMon1,
   },
 ];
