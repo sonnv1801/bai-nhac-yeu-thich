@@ -47,8 +47,25 @@ import NoiGioLen from "./videos/NoiGioLen.mp3";
 import ThienLyOi from "./videos/ThienLyOi.mp3";
 import ThuongNguoiKhongThuong from "./videos/ThuongNguoiKhongThuong.mp3";
 import VayMaEmNoBuong from "./videos/VayMaEmNoBuong.mp3";
+import LamGiauVoiMa from "./videos/LamGiauVoiMa.mp3";
+import HanhLangCu from "./videos/HanhLangCu.mp3";
+import DungDoLoiChoBoTre from "./videos/DungDoLoiChoBoTre.mp3";
+import MaMaMiA from "./videos/MaMaMiA.mp3";
+import MeOi2 from "./videos/MeOi2.mp3";
+import NhungLoiHuaBoQuen from "./videos/NhungLoiHuaBoQuen.mp3";
+import RoiToiLun from "./videos/RoiToiLun.mp3";
+import TamGiao from "./videos/TamGiao.mp3";
+import TheLuong from "./videos/TheLuong.mp3";
+import ThuXaNgutNgan from "./videos/ThuXaNgutNgan.mp3";
+import TinhSauThienThuMuonLoi from "./videos/TinhSauThienThuMuonLoi.mp3";
+import WaitForYou from "./videos/WaitForYou.mp3";
+import NoNhau1Loi from "./videos/NoNhau1Loi.mp3";
 
 export const audios = [
+  {
+    name: "Chân Trời và Những Đám Mây",
+    url: LamGiauVoiMa,
+  },
   {
     name: "Sơn Thủy Trùng Mây",
     url: SonThuyTrungMay,
@@ -68,6 +85,10 @@ export const audios = [
   {
     name: "Thì Thôi",
     url: EmLangQuenTinhToi,
+  },
+  {
+    name: "Nợ Nhau Một Lời",
+    url: NoNhau1Loi,
   },
   {
     name: "ID 3107 (J)",
@@ -92,6 +113,50 @@ export const audios = [
   {
     name: "Thương Người Không Thương",
     url: ThuongNguoiKhongThuong,
+  },
+  {
+    name: "Hành Lang Cũ",
+    url: HanhLangCu,
+  },
+  {
+    name: "Đừng Đỗ Hết Lỗi Cho Bọn Trẻ",
+    url: DungDoLoiChoBoTre,
+  },
+  {
+    name: "MaMaMiA",
+    url: MaMaMiA,
+  },
+  {
+    name: "Mẹ Ơi 2 (J)",
+    url: MeOi2,
+  },
+  {
+    name: "Những Lời Hứa Bỏ Quên",
+    url: NhungLoiHuaBoQuen,
+  },
+  {
+    name: "Rồi Tới Lun",
+    url: RoiToiLun,
+  },
+  {
+    name: "Tâm Giao",
+    url: TamGiao,
+  },
+  {
+    name: "Thê Lương",
+    url: TheLuong,
+  },
+  {
+    name: "Thu Xa Ngút Ngàn",
+    url: ThuXaNgutNgan,
+  },
+  {
+    name: "Tình Sầu Thiên Thu ...",
+    url: TinhSauThienThuMuonLoi,
+  },
+  {
+    name: "Waiting For You",
+    url: WaitForYou,
   },
   {
     name: "Vậy Mà Em Nỡ Buông Tay Anh Rồi",
