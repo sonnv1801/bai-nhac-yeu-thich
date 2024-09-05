@@ -105,9 +105,9 @@ body {
   transition: filter 0.5s ease;
 }
 
-.playlist.blurred {
+/* .playlist.blurred {
   filter: blur(5px);
-}
+} */
 
 .playlist h5 {
   padding: 12px;
