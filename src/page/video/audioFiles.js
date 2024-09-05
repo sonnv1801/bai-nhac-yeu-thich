@@ -35,11 +35,71 @@ import SoRangEmBietAnhConYeuEm from "./videos/SoRangEmBietAnhConYeuEm.mp3";
 import ChiBangCaiGatDau from "./videos/ChiBangCaiGatDau.mp3";
 import KhiNguoiMinhYeuKhoc from "./videos/KhiNguoiMinhYeuKhoc.mp3";
 import WeanShh from "./videos/WeanShh.mp3";
+import SonThuyTrungMay from "./videos/SonThuyTrungMay.mp3";
+import W31072 from "./videos/31072.mp3";
+import DanhMatEm from "./videos/DanhMatEm.mp3";
+import DauODauNay from "./videos/DauODayNay.mp3";
+import EmLangQuenTinhToi from "./videos/EmLangQuenTinhToi.mp3";
+import ID31073 from "./videos/ID31073.mp3";
+import IDThangMay from "./videos/IDThangMay.mp3";
+import MinhDaHuaYeuThatLau from "./videos/MinhDaHuaYeuThatLau.mp3";
+import NoiGioLen from "./videos/NoiGioLen.mp3";
+import ThienLyOi from "./videos/ThienLyOi.mp3";
+import ThuongNguoiKhongThuong from "./videos/ThuongNguoiKhongThuong.mp3";
+import VayMaEmNoBuong from "./videos/VayMaEmNoBuong.mp3";
 
 export const audios = [
   {
+    name: "Sơn Thủy Trùng Mây",
+    url: SonThuyTrungMay,
+  },
+  {
+    name: "W-ID3107",
+    url: W31072,
+  },
+  {
+    name: "Đánh Mất Em",
+    url: DanhMatEm,
+  },
+  {
+    name: "Đau Ở Đây Này",
+    url: DauODauNay,
+  },
+  {
+    name: "Thì Thôi",
+    url: EmLangQuenTinhToi,
+  },
+  {
+    name: "ID 3107 (J)",
+    url: ID31073,
+  },
+  {
+    name: "W ID Thang Máy",
+    url: IDThangMay,
+  },
+  {
+    name: "Mình Đã Hứa Yêu Thật Lâu...",
+    url: MinhDaHuaYeuThatLau,
+  },
+  {
+    name: "Nổi Gió Lên",
+    url: NoiGioLen,
+  },
+  {
+    name: "Thiên Lý Ơi (J) - Mix",
+    url: ThienLyOi,
+  },
+  {
+    name: "Thương Người Không Thương",
+    url: ThuongNguoiKhongThuong,
+  },
+  {
+    name: "Vậy Mà Em Nỡ Buông Tay Anh Rồi",
+    url: VayMaEmNoBuong,
+  },
+  {
     name: "Em Biết Không - Phan Duy Anh",
-    url: WeanShh,
+    url: EmBietKhong,
   },
 
   {
@@ -100,7 +160,7 @@ export const audios = [
   },
   {
     name: "Shhhhhhh... (W)",
-    url: EmBietKhong,
+    url: WeanShh,
   },
   {
     name: "Lan Man",
