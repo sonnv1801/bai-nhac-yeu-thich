@@ -190,6 +190,30 @@ const Video = () => {
     }
   }, []);
 
+  // Listen for keydown event to trigger play/pause with Spacebar
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.code === "Space") {
+        event.preventDefault(); // Prevent default spacebar behavior (e.g., scrolling)
+        handlePlayPause();
+      } else if (event.code === "ArrowRight") {
+        handleNext();
+      } else if (event.code === "ArrowLeft") {
+        handlePrevious();
+      } else if (event.code === "Digit1") {
+        handleReplay(); // Toggle random mode with key 1
+      } else if (event.code === "Digit2") {
+        handleRandom(); // Toggle replay mode with key 2
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isPlaying, random, replay]);
+
   const toggleVideo = () => {
     setShowVideo(!showVideo);
   };
