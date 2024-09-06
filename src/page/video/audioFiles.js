@@ -59,7 +59,21 @@ import TheLuong from "./videos/TheLuong.mp3";
 import ThuXaNgutNgan from "./videos/ThuXaNgutNgan.mp3";
 import TinhSauThienThuMuonLoi from "./videos/TinhSauThienThuMuonLoi.mp3";
 import WaitForYou from "./videos/WaitForYou.mp3";
+import NeuLucDo from "./videos/NeuLucDo.mp3";
+import TruocKhiEmTonTai from "./videos/TruocKhiEmTonTai.mp3";
+import NguoiYeuCu from "./videos/NguoiYeuCu.mp3";
+import GuiChoAnh from "./videos/GuiChoAnh.mp3";
+import CuDeAnhTaRoiDi from "./videos/CuDeAnhTaRoiDi.mp3";
+import AGhetLamBanVoiEm from "./videos/AGhetLamBanVoiEm.mp3";
+import TrenTinhBanDuoiTinhYeu from "./videos/TrenTinhBanDuoiTinhYeu.mp3";
+import LacDuong from "./videos/LacDuong.mp3";
+import CoKhongGiuMatDungTim from "./videos/CoKhongGiuMatDungTim.mp3";
+import YeuNhuNgayYeuCuoi from "./videos/YeuNhuNgayYeuCuoi.mp3";
+import CuuVanKipKhong from "./videos/CuuVanKipKhong.mp3";
+import AKhongCoY from "./videos/AKhongCoY.mp3";
+import KhongYeuDenTheDau from "./videos/KhongYeuDenTheDau.mp3";
 import NoNhau1Loi from "./videos/NoNhau1Loi.mp3";
+import EmLamKeDangThuongGoc from "./videos/EmLamKeDangThuongGoc.mp3";
 
 export const audios = [
   {
@@ -155,115 +169,6 @@ export const audios = [
     url: TinhSauThienThuMuonLoi,
   },
   {
-    name: "Waiting For You",
-    url: WaitForYou,
-  },
-  {
-    name: "Vậy Mà Em Nỡ Buông Tay Anh Rồi",
-    url: VayMaEmNoBuong,
-  },
-  {
-    name: "Em Biết Không - Phan Duy Anh",
-    url: EmBietKhong,
-  },
-
-  {
-    name: "Thay Tôi Yêu Cô Ấy",
-    url: ThayToiYeuCoAy,
-  },
-  {
-    name: "Kim Phút Kim Giờ",
-    url: KimPhutKimGio,
-  },
-  {
-    name: "Đều Là Của Em",
-    url: DeuLaCuaEm,
-  },
-  {
-    name: "Chiếc Ô 3 Người",
-    url: ChiecO3Nguoi,
-  },
-  {
-    name: "Lãng",
-    url: Lang,
-  },
-  {
-    name: "Gặp lại năm ta 60",
-    url: GapLaiTa60,
-  },
-  {
-    name: "Vừa đi vừa Khóc",
-    url: VuaDiVuaKhoc,
-  },
-  {
-    name: "Tội Cho Em (LVD)",
-    url: ToiChoEm,
-  },
-  {
-    name: "Người Như Anh",
-    url: NguoiNhuAnh,
-  },
-  {
-    name: "Lời Từ Biệt Chưa Nói",
-    url: LoiTuBietChuaNoi,
-  },
-  {
-    name: "Hẹn Em Ở Lần Yêu Thứ 2",
-    url: HenEmOLanYeuThu2,
-  },
-  {
-    name: "Có Ai Hẹn Hò Cùng Em Chưa",
-    url: CoAiHenHoCungEmChua,
-  },
-  {
-    name: "Tình Ta Hai Ngã",
-    url: TinhTaHaiNga,
-  },
-  {
-    name: "Lối Đi Cho Nhau",
-    url: LoiDiChoNhau,
-  },
-  {
-    name: "Shhhhhhh... (W)",
-    url: WeanShh,
-  },
-  {
-    name: "Lan Man",
-    url: LanMan,
-  },
-  {
-    name: "You (Song Luân)",
-    url: You,
-  },
-  {
-    name: "Có Sao Cũng Đành",
-    url: CoSaoCungDanh,
-  },
-  {
-    name: "Buồn Hay Vui",
-    url: BuonHayVui,
-  },
-  {
-    name: "Say Đắm Trong Lần Đầu",
-    url: SayDamTrongLanDau,
-  },
-  {
-    name: "Con Tim Không Thay Đổi",
-    url: ConTimKhongDoiThay,
-  },
-  {
-    name: "Sợ Rằng Em Biết Anh Còn Yêu Em",
-    url: SoRangEmBietAnhConYeuEm,
-  },
-  {
-    name: "Khi Người Mình Yêu Khóc",
-    url: KhiNguoiMinhYeuKhoc,
-  },
-  {
-    name: "Chỉ Bằng Một Cái Gật Đầu",
-    url: ChiBangCaiGatDau,
-  },
-  {
     name: "Exit Sign - HTH",
     url: ExitSignHTH,
   },
@@ -306,5 +211,171 @@ export const audios = [
   {
     name: "MỘT NGÀY BUỒN",
     url: MotNgayBuon,
+  },
+
+  {
+    name: "KHÔNG YÊU ĐẾN THẾ ĐÂU - (NH)",
+    url: KhongYeuDenTheDau,
+  },
+  {
+    name: "Anh Không Cố Ý - (NH)",
+    url: AKhongCoY,
+  },
+  {
+    name: "CỨU VÃN KỊP KHÔNG - (NH)",
+    url: CuuVanKipKhong,
+  },
+  {
+    name: "EM LÀ KẺ ĐÁNG THƯƠNG - (NH)",
+    url: EmLamKeDangThuongGoc,
+  },
+  {
+    name: "YÊU NHƯ NGÀY YÊU CUỐI - (NH)",
+    url: YeuNhuNgayYeuCuoi,
+  },
+  {
+    name: "Có Không Giữ Mất Đừng Tìm - (NH)",
+    url: CoKhongGiuMatDungTim,
+  },
+  {
+    name: "Lạc Đường - (NH)",
+    url: LacDuong,
+  },
+  {
+    name: "TRÊN TÌNH BẠN DƯỚI TÌNH YÊU  - (NH)",
+    url: TrenTinhBanDuoiTinhYeu,
+  },
+  {
+    name: "Anh Ghét Làm Bạn Em - (NH)",
+    url: AGhetLamBanVoiEm,
+  },
+  {
+    name: "CỨ ĐỂ ANH TA RỜI ĐI  - (NH)",
+    url: CuDeAnhTaRoiDi,
+  },
+  {
+    name: "Gửi Cho Anh - (NH)",
+    url: GuiChoAnh,
+  },
+  {
+    name: "Người Yêu Cũ - (NH)",
+    url: NguoiYeuCu,
+  },
+  {
+    name: "Trước Khi Em Tồn Tại - (NH)",
+    url: TruocKhiEmTonTai,
+  },
+  {
+    name: "Nếu Lúc Đó - (NH)",
+    url: NeuLucDo,
+  },
+  {
+    name: "Waiting For You - (NH)",
+    url: WaitForYou,
+  },
+  {
+    name: "Vậy Mà Em Nỡ Buông Tay Anh Rồi - (NH)",
+    url: VayMaEmNoBuong,
+  },
+  {
+    name: "Em Biết Không - Phan Duy Anh - (NH)",
+    url: EmBietKhong,
+  },
+
+  {
+    name: "Thay Tôi Yêu Cô Ấy - (NH)",
+    url: ThayToiYeuCoAy,
+  },
+  {
+    name: "Kim Phút Kim Giờ - (NH)",
+    url: KimPhutKimGio,
+  },
+  {
+    name: "Đều Là Của Em - (NH)",
+    url: DeuLaCuaEm,
+  },
+  {
+    name: "Chiếc Ô 3 Người - (NH)",
+    url: ChiecO3Nguoi,
+  },
+  {
+    name: "Lãng - (NH)",
+    url: Lang,
+  },
+  {
+    name: "Gặp lại năm ta 60 - (NH)",
+    url: GapLaiTa60,
+  },
+  {
+    name: "Vừa đi vừa Khóc - (NH)",
+    url: VuaDiVuaKhoc,
+  },
+  {
+    name: "Tội Cho Em (LVD) - (NH)",
+    url: ToiChoEm,
+  },
+  {
+    name: "Người Như Anh - (NH)",
+    url: NguoiNhuAnh,
+  },
+  {
+    name: "Lời Từ Biệt Chưa Nói - (NH)",
+    url: LoiTuBietChuaNoi,
+  },
+  {
+    name: "Hẹn Em Ở Lần Yêu Thứ 2 - (NH)",
+    url: HenEmOLanYeuThu2,
+  },
+  {
+    name: "Có Ai Hẹn Hò Cùng Em Chưa - (NH)",
+    url: CoAiHenHoCungEmChua,
+  },
+  {
+    name: "Tình Ta Hai Ngã - (NH)",
+    url: TinhTaHaiNga,
+  },
+  {
+    name: "Lối Đi Cho Nhau - (NH)",
+    url: LoiDiChoNhau,
+  },
+  {
+    name: "Shhhhhhh... (W) - (NH)",
+    url: WeanShh,
+  },
+  {
+    name: "Lan Man - (NH)",
+    url: LanMan,
+  },
+  {
+    name: "You (Song Luân) - (NH)",
+    url: You,
+  },
+  {
+    name: "Có Sao Cũng Đành - (NH)",
+    url: CoSaoCungDanh,
+  },
+  {
+    name: "Buồn Hay Vui - (NH)",
+    url: BuonHayVui,
+  },
+  {
+    name: "Say Đắm Trong Lần Đầu - (NH)",
+    url: SayDamTrongLanDau,
+  },
+  {
+    name: "Con Tim Không Thay Đổi - (NH)",
+    url: ConTimKhongDoiThay,
+  },
+  {
+    name: "Sợ Rằng Em Biết Anh Còn Yêu Em - (NH)",
+    url: SoRangEmBietAnhConYeuEm,
+  },
+  {
+    name: "Khi Người Mình Yêu Khóc - (NH)",
+    url: KhiNguoiMinhYeuKhoc,
+  },
+  {
+    name: "Chỉ Bằng Một Cái Gật Đầu - (NH)",
+    url: ChiBangCaiGatDau,
   },
 ];
