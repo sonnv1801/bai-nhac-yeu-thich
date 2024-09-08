@@ -312,6 +312,9 @@ const Video = () => {
           onMouseLeave={handleMouseLeave}
         >
           <h5>Have a nice day. Enjoy the music. 😉</h5>
+          <a href="https://drive.google.com/drive/u/1/folders/1EEIo1ieVHgBy8EZdpSYizcomCJ_OwWFq">
+            Nghe Đỡ Nha, Đang lỗi{" "}
+          </a>
           {/* Volume Control Slider */}
           <div className="volume-control">
             <label htmlFor="volume">Volume:</label>
