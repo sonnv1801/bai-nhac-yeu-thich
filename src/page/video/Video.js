@@ -204,6 +204,12 @@ const Video = () => {
         handleReplay(); // Toggle random mode with key 1
       } else if (event.code === "Digit2") {
         handleRandom(); // Toggle replay mode with key 2
+      } else if (event.code === "ArrowUp") {
+        event.preventDefault(); // Prevent default arrow up behavior (scrolling)
+        setVolume((prevVolume) => Math.min(prevVolume + 0.1, 1)); // Increase volume
+      } else if (event.code === "ArrowDown") {
+        event.preventDefault(); // Prevent default arrow down behavior (scrolling)
+        setVolume((prevVolume) => Math.max(prevVolume - 0.1, 0)); // Decrease volume
       }
     };
 
@@ -212,7 +218,7 @@ const Video = () => {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isPlaying, random, replay]);
+  }, [isPlaying, random, replay, volume]);
 
   const toggleVideo = () => {
     setShowVideo(!showVideo);
