@@ -220,10 +220,6 @@ const Video = () => {
     };
   }, [isPlaying, random, replay, volume]);
 
-  const toggleVideo = () => {
-    setShowVideo(!showVideo);
-  };
-
   const handleMouseEnter = () => {
     setIsBlurred(false);
   };
