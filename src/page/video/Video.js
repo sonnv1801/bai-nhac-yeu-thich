@@ -28,6 +28,7 @@ const Video = () => {
   const [playedSeconds, setPlayedSeconds] = useState(0);
   const [playCounts, setPlayCounts] = useState(Array(audios.length).fill(0));
 
+  // eslint-disable-next-line no-unused-vars
   const [showVideo, setShowVideo] = useState(false);
   const [isBlurred, setIsBlurred] = useState(true);
   const [searchTerm, setSearchTerm] = useState(""); // State for the search input
@@ -218,6 +219,7 @@ const Video = () => {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPlaying, random, replay, volume]);
 
   const handleMouseEnter = () => {
