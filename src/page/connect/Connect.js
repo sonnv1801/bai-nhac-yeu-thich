@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Connect = () => {
+  // eslint-disable-next-line no-unused-vars
   const [isOnline, setIsOnline] = useState(navigator.onLine);
 
   useEffect(() => {
